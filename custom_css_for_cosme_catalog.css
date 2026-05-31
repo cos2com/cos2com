@@ -1,0 +1,91 @@
+/* ==========================================================================
+   COSME, 2-COM | Clinical Theme Custom Style Sheet
+   ========================================================================== */
+
+/* 1. 基本設定 & 極細フォントレンダリング */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #fafafa;
+    color: #1e293b;
+    letter-spacing: 0.02em;
+}
+
+/* 2. SHIMBI METHODスタイル タイポグラフィ */
+.brand-title {
+    font-weight: 200;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+}
+
+.mono-tag {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    letter-spacing: 0.1em;
+}
+
+/* 3. カスタム・アニメーション・トランジション */
+.transition-clinical {
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* 4. プロダクトカードのホバーエフェクト */
+.product-card {
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    background: #ffffff;
+    border: 1px solid #f1f5f9;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+    border-color: #cbd5e1;
+    box-shadow: 0 12px 20px -8px rgba(0, 0, 0, 0.04);
+}
+
+/* 5. ミニマルなスクロールバー設計 */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #fafafa;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* 6. お気に入りボタンのアニメーション */
+.fav-btn svg {
+    transition: transform 0.2s ease, fill 0.2s ease, stroke 0.2s ease;
+}
+
+.fav-btn:active svg {
+    transform: scale(0.8);
+}
+
+/* 7. モーダルのイン・アウト挙動をコントロール */
+#productModal {
+    transition: opacity 0.3s ease;
+}
+
+#productModal.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#productModal .modal-content {
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* 8. ぼかし背景（グラスモルフィズム） */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
